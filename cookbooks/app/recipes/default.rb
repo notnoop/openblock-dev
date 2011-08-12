@@ -12,9 +12,11 @@ end
 template "/srv/openblock/src/obdemo/obdemo/settings.py" do
     source "settings.py.erb"
 
-    owner "#{node[:user]}"
+    owner node[:user]
+    mode 0755
     variables({
         :db_user => node[:database][:user],
-        :db_name => node[:database][:name]
+        :db_name => node[:database][:name],
+        :debug => node[:debug]
     })
 end

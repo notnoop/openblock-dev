@@ -5,7 +5,11 @@
         "recipe[postgis::default]",
         "recipe[openblock::default]",
         "recipe[app::default]",
-        "recipe[app::db_setup]"
+        "recipe[app::db_setup]",
+
+        "recipe[apache2::default]",
+        "recipe[apache2::mod_wsgi]",
+        "recipe[app::server]"
     ],
 
     "project_dir": "/home/ubuntu/chef",
@@ -13,5 +17,6 @@
     "database": {
         "name": "sample",
         "user": "ubuntu"
-    }
+    },
+    "debug": "False"
 }

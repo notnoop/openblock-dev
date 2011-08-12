@@ -37,6 +37,13 @@ when "ubuntu"
 
   set[:postgresql][:dir] = "/etc/postgresql/#{node[:postgresql][:version]}/main"
 
+  if platform_version.to_f >= 11.0
+      srv_name = "postgresql"
+  else
+      srv_name = "postgresql-#{node[:postgresql][:version]}"
+  end
+  set[:postgresql][:service_name] = srv_name
+
 when "fedora"
 
   if platform_version.to_f <= 12

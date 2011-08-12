@@ -31,7 +31,7 @@ INSTALLED_APPS += (
     'obdemo',
     )
 
-DEBUG = True
+DEBUG = <%= @debug %>
 
 OBDEMO_DIR = os.path.normpath(os.path.dirname(__file__))
 TEMPLATE_DIRS = (os.path.join(OBDEMO_DIR, 'templates'), ) + TEMPLATE_DIRS
@@ -40,7 +40,7 @@ ROOT_URLCONF = 'obdemo.urls'
 DATABASES = {
     'default': {
         'NAME': '<%= @db_name %>',
-        'USER': '<%= @db_user %>',
+        'USER': '',
         'PASSWORD': '',
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'OPTIONS': {},

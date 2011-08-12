@@ -70,6 +70,7 @@ Vagrant::Config.run do |config|
             :name => "sample",
             :user => "vagrant"
         },
+        :debug => "True"
     })
 
   end
