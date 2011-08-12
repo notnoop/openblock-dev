@@ -28,8 +28,10 @@ end
 
 package "postgresql"
 
+srv_name = File.exists?("/etc/init.d/postgresql") ? "postgresql" : "postgresql-#{node.postgresql.version}"
+
 service "postgresql" do
-  service_name "postgresql-#{node.postgresql.version}"
+  service_name srv_name
   supports :restart => true, :status => true, :reload => true
   action :nothing
 end

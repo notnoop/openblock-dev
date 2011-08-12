@@ -27,6 +27,8 @@ directory "/srv/openblock" do
 end
 
 python_virtualenv "/srv/openblock/virtualenv" do
+    interpreter "python"
+
     owner "#{node[:user]}"
     #options "--no-site-packages"
 

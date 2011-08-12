@@ -25,3 +25,13 @@ bash "create project database" do
     EOH
    ), :user => "postgres"
 end
+
+bash "Create db" do
+    user "#{node[:user]}"
+
+    code <<-EOY
+    export DJANGO_SETTINGS_MODULE=obdemo.settings
+    /srv/openblock/virtualenv/bin/django-admin.py syncdb --noinput --migrate
+    EOY
+end
+
