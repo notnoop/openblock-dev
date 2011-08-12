@@ -2,7 +2,6 @@
 WSGIDaemonProcess <%= @node[:user] %> user=<%= @node[:user] %> group=<%= @node[:user] %> processes=5 threads=1
   WSGIScriptAlias / /srv/openblock/app.wsgi
 
-  Alias /cache-forever "/srv/openblock/src/ebpub/ebpub/media/cache-forever"
   Alias /scripts "/srv/openblock/src/ebpub/ebpub/media/scripts"
   Alias /styles "/srv/openblock/src/ebpub/ebpub/media/styles"
 
@@ -13,6 +12,28 @@ WSGIDaemonProcess <%= @node[:user] %> user=<%= @node[:user] %> group=<%= @node[:
     Allow from all
     IndexOptions FancyIndexing
   </Directory>
+
+  Alias /olwidget "/srv/openblock/static/olwidget"
+  Alias /static "/srv/openblock/static"
+
+  <Directory "/srv/openblock/static">
+    Order allow,deny
+    Options Indexes FollowSymLinks
+
+    Allow from all
+    IndexOptions FancyIndexing
+  </Directory>
+
+  Alias /cache-forever "/tmp/eb_media/cache-forever"
+  <Directory "/tmp/eb_media/cache-forever">
+    Order allow,deny
+    Options Indexes FollowSymLinks
+
+    Allow from all
+    IndexOptions FancyIndexing
+  </Directory>
+
+
 
    LogLevel info
    ErrorLog <%= @node[:apache][:log_dir] %>/<%= @params[:name] %>-error.log

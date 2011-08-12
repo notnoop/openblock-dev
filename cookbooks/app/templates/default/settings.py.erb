@@ -29,6 +29,8 @@ from ebpub.settings_default import *
 
 INSTALLED_APPS += (
     'obdemo',
+
+    'django.contrib.staticfiles',
     )
 
 DEBUG = <%= @debug %>
@@ -36,6 +38,8 @@ DEBUG = <%= @debug %>
 OBDEMO_DIR = os.path.normpath(os.path.dirname(__file__))
 TEMPLATE_DIRS = (os.path.join(OBDEMO_DIR, 'templates'), ) + TEMPLATE_DIRS
 ROOT_URLCONF = 'obdemo.urls'
+
+STATIC_ROOT = '/srv/openblock/static'
 
 DATABASES = {
     'default': {
@@ -73,6 +77,8 @@ PASSWORD_RESET_SALT = '<REPLACE_ME>%s%s'
 
 EB_MEDIA_URL = '' # leave at '' for development
 
+DJANGO_STATIC = False
+DJANGO_STATIC_SAVE_PREFIX = '/tmp/eb_media/cache-forever'
 
 # This is used as a "From:" in e-mails sent to users.
 GENERIC_EMAIL_SENDER = 'openblock@' + EB_DOMAIN

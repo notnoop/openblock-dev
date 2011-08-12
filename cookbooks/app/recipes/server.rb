@@ -26,4 +26,13 @@ bash "disable default apache" do
   code "a2dissite default"
 end
 
+bash "collect all files" do
+    code <<-EOY
+    DJANGO_SETTINGS_MODULE=obdemo.settings /srv/openblock/virtualenv/bin/django-admin.py collectstatic --noinput
+    EOY
+
+    user node[:user]
+end
+
 web_app "openblock"
+
