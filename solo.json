@@ -1,0 +1,17 @@
+{
+    "run_list": [
+        "recipe[app::user]",
+        "recipe[python::default]",
+        "recipe[postgis::default]",
+        "recipe[openblock::default]",
+        "recipe[app::default]",
+        "recipe[app::db_setup]"
+    ],
+
+    "project_dir": "/home/ubuntu/chef",
+    "user": "ubuntu",
+    "database": {
+        "name": "sample",
+        "user": "ubuntu"
+    }
+}

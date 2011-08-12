@@ -1,0 +1,2 @@
+export DJANGO_SETTINGS_MODULE=obdemo.settings
+source /srv/openblock/virtualenv/bin/activate
