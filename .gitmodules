@@ -1,0 +1,3 @@
+[submodule "openblock"]
+	path = openblock
+	url = git://github.com/openplans/openblock.git
