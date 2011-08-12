@@ -13,13 +13,13 @@ Customazations
 This project initializes the OpenBlock Demo project for Boston.  To customize
 it, you may need to customize the following:
 
-    * Adding a Git submodule (e.g. `openblock` here) pointing to the
-      `OpenBlock` project to be deployed
-    * Customizing `cookbooks/app/receipes/default.rb` to install any
-      dependencies or configurations that is needed for the particular
-      instance.  Please consult the `Chef` documentation.
-    * Customize `cookbooks/app/templates/default/settings.py.erb` for the
-      OpenBlock project.
+  * Adding a Git submodule (e.g. `openblock` here) pointing to the
+    `OpenBlock` project to be deployed
+  * Customizing `cookbooks/app/receipes/default.rb` to install any
+    dependencies or configurations that is needed for the particular
+    instance.  Please consult the `Chef` documentation.
+  * Customize `cookbooks/app/templates/default/settings.py.erb` for the
+    OpenBlock project.
 
 
 Development
