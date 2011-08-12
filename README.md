@@ -58,6 +58,11 @@ To bootstrap the full environment, you simple need to do the following:
     ...... all dependencies .....
 
     $ vagrant ssh
+
+    # fast way
+    $ DJANGO_SETTINGS_MODULE=obdemo.settings /srv/openblock/virtualenv/bin/django-admin.py runserver 0.0.0.0:8000
+
+    # more explicit way
     # The project is installed in `/srv/openblock/src` with scripts in
     # `/vagrant`
 
