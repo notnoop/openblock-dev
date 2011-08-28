@@ -40,7 +40,11 @@ link "/srv/openblock/src" do
 end
 
 %w{ebpub ebdata obadmin}.each do |p|
-    python_pip "-r /srv/openblock/src/#{p}/requirements.txt -e /srv/openblock/src/#{p}" do
+    python_pip "-r /srv/openblock/src/#{p}/requirements.txt" do
+        virtualenv "/srv/openblock/virtualenv"
+        action :install
+    end
+    python_pip "-e /srv/openblock/src/#{p}" do
         virtualenv "/srv/openblock/virtualenv"
         action :install
     end
