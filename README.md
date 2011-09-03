@@ -51,6 +51,7 @@ To bootstrap the full environment, you simple need to do the following:
     $ # Check out the code
     $ git clone git://github.com/notnoop/openblock-dev.git
     $ cd openblock-dev
+    $ git submodule init
     $ git submodule update
 
     $ vagrant up
