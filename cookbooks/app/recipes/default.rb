@@ -3,7 +3,13 @@ include_recipe "git"
 
 # installs the demo app
 
-python_pip "-r /srv/openblock/src/obdemo/requirements.txt -e /srv/openblock/src/obdemo" do
+python_pip "-r /srv/openblock/src/obdemo/requirements.txt" do
+    virtualenv "/srv/openblock/virtualenv"
+
+    action :install
+end
+
+python_pip "-e /srv/openblock/src/obdemo" do
     virtualenv "/srv/openblock/virtualenv"
 
     action :install
